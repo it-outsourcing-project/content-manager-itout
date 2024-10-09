@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_blocks_block_1s",
+  "info": {
+    "displayName": "Block_1",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "is_send_request_btn": {
+      "type": "boolean",
+      "default": true
+    },
+    "is_image_right": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "name"
+    }
+  }
+}

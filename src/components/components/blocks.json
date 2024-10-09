@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_components_blocks",
+  "info": {
+    "displayName": "blocks"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Название"
+    },
+    "description": {
+      "type": "text",
+      "default": "+71231231212"
+    }
+  }
+}

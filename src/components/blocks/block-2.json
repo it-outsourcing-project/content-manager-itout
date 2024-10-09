@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_block_2s",
+  "info": {
+    "displayName": "Block_2",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "center_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "is_send_request_btn": {
+      "type": "boolean"
+    },
+    "services": {
+      "displayName": "Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.card"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "Название секции"
+    }
+  }
+}

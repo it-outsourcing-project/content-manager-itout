@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_components_cards",
+  "info": {
+    "displayName": "Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Название услуги"
+    },
+    "description": {
+      "type": "string",
+      "default": "Описание для услуги"
+    },
+    "price": {
+      "type": "string",
+      "default": "Цена",
+      "required": false
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
