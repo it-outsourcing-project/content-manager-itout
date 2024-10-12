@@ -17,62 +17,6 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
-export interface BlocksBlock3 extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_block_3s';
-  info: {
-    displayName: 'Block_3';
-    description: '';
-  };
-  attributes: {
-    image: Schema.Attribute.Media<'images'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    blocks: Schema.Attribute.Component<'components.blocks', true> &
-      Schema.Attribute.Required;
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0441\u0435\u043A\u0446\u0438\u0438'>;
-  };
-}
-
-export interface BlocksBlock2 extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_block_2s';
-  info: {
-    displayName: 'Block_2';
-    description: '';
-  };
-  attributes: {
-    center_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    is_send_request_btn: Schema.Attribute.Boolean;
-    services: Schema.Attribute.Component<'components.card', true>;
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0441\u0435\u043A\u0446\u0438\u0438'>;
-  };
-}
-
-export interface BlocksBlock1 extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_block_1s';
-  info: {
-    displayName: 'Block_1';
-    description: '';
-  };
-  attributes: {
-    title: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    is_send_request_btn: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<true>;
-    is_image_right: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<true>;
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'name'>;
-  };
-}
-
 export interface ComponentsStringList extends Struct.ComponentSchema {
   collectionName: 'components_components_string_lists';
   info: {
@@ -131,17 +75,73 @@ export interface ComponentsBlocks extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksBlock3 extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_3s';
+  info: {
+    displayName: 'Block_3';
+    description: '';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    blocks: Schema.Attribute.Component<'components.blocks', true> &
+      Schema.Attribute.Required;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0441\u0435\u043A\u0446\u0438\u0438'>;
+  };
+}
+
+export interface BlocksBlock2 extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_2s';
+  info: {
+    displayName: 'Block_2';
+    description: '';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    is_send_request_btn: Schema.Attribute.Boolean;
+    services: Schema.Attribute.Component<'components.card', true>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0441\u0435\u043A\u0446\u0438\u0438'>;
+  };
+}
+
+export interface BlocksBlock1 extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_block_1s';
+  info: {
+    displayName: 'Block_1';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    is_send_request_btn: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    is_image_right: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'name'>;
+    is_description_small: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.seo': SharedSeo;
-      'blocks.block-3': BlocksBlock3;
-      'blocks.block-2': BlocksBlock2;
-      'blocks.block-1': BlocksBlock1;
       'components.string-list': ComponentsStringList;
       'components.link': ComponentsLink;
       'components.card': ComponentsCard;
       'components.blocks': ComponentsBlocks;
+      'blocks.block-3': BlocksBlock3;
+      'blocks.block-2': BlocksBlock2;
+      'blocks.block-1': BlocksBlock1;
     }
   }
 }

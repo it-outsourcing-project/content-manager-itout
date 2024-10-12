@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "center_image": {
+    "image": {
       "type": "media",
       "multiple": false,
       "required": false,

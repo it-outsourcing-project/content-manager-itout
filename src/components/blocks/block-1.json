@@ -36,6 +36,10 @@
       "type": "string",
       "required": true,
       "default": "name"
+    },
+    "is_description_small": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
