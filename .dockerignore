@@ -1,2 +1,21 @@
+# Игнорируем node_modules, так как зависимости будут установлены внутри контейнера
 node_modules
+dist
+.cache
+
+# Игнорируем логи и временные файлы
 npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Игнорируем локальные конфигурации среды
+.env
+
+# Игнорируем IDE и редакторы
+.vscode/
+.idea/
+
+# Игнорируем файлы Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
