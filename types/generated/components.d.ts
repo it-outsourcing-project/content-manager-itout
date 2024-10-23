@@ -1,5 +1,22 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    name: 'Seo';
+    icon: 'allergies';
+    displayName: 'Seo';
+    description: '';
+  };
+  attributes: {
+    ogTitle: Schema.Attribute.String;
+    ogDescription: Schema.Attribute.Text;
+    ogImage: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text;
+  };
+}
+
 export interface BlocksBlock3 extends Struct.ComponentSchema {
   collectionName: 'components_blocks_block_3s';
   info: {
@@ -114,26 +131,10 @@ export interface ComponentsBlocks extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedSeo extends Struct.ComponentSchema {
-  collectionName: 'components_shared_seos';
-  info: {
-    name: 'Seo';
-    icon: 'allergies';
-    displayName: 'Seo';
-    description: '';
-  };
-  attributes: {
-    ogTitle: Schema.Attribute.String;
-    ogDescription: Schema.Attribute.Text;
-    ogImage: Schema.Attribute.Media<'images'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    description: Schema.Attribute.Text;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.seo': SharedSeo;
       'blocks.block-3': BlocksBlock3;
       'blocks.block-2': BlocksBlock2;
       'blocks.block-1': BlocksBlock1;
@@ -141,7 +142,6 @@ declare module '@strapi/strapi' {
       'components.link': ComponentsLink;
       'components.card': ComponentsCard;
       'components.blocks': ComponentsBlocks;
-      'shared.seo': SharedSeo;
     }
   }
 }
