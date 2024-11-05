@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  strapi:
+    container_name: strapi-itout-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./data:/app/data
+      - ./public:/app/public
+      - ./.tmp:/app/.tmp
+      - ./node_modules
+    ports:
+      - 1338:1338
